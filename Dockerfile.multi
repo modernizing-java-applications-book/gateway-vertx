@@ -10,5 +10,5 @@ ENV COMPONENT_CATALOG_PORT=8080
 ENV COMPONENT_INVENTORY_HOST=inventory-quarkus
 ENV COMPONENT_INVENTORY_PORT=8080
 COPY --from=builder /opt/app/target/*.jar /app.jar
-CMD java -jar /app.jar
-EXPOSE 8090
+CMD java -jar /app.jar -Dhttp.port=8080
+EXPOSE 8080
